@@ -1,0 +1,33 @@
+//Auth with Access token
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGV0cm9zIiwiaWF0IjoxNjI1NTkyMTA0LCJleHAiOjE2MjU1OTIxMzR9.sEkrO084XzmYvFG09_WNL0s_PrVfwa09JKW2S6p4cD4
+
+###
+
+//Delete Refresh token on logout
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGV0cm9zIiwiaWF0IjoxNjI1NTkyMTA0fQ.BAcnBcHvCSevGDyyaFRF8v3yiW0FyPUSpV_q-hADgI0"
+}
+
+###
+
+//Refresh Token: Get new Access token
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGV0cm9zIiwiaWF0IjoxNjI1NTkyMTA0fQ.BAcnBcHvCSevGDyyaFRF8v3yiW0FyPUSpV_q-hADgI0"
+}
+
+###
+
+//Request Login: Get Refresh and Access tokens
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username": "Petros"
+}
